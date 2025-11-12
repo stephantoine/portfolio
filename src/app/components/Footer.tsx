@@ -15,10 +15,10 @@ const Footer = () => {
                         <p className='text-sm text-secondary mt-2'>Portfolio de Stéphane Antoine. Tous droits réservés. {new Date().getFullYear()}</p>
                     </div>
                     <div className='flex justify-center space-x-6'>
-                        <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-duration-300'>
+                        <Link href="https://github.com/stephantoine" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-duration-300'>
                             <FaGithub />
                         </Link>
-                        <Link href="/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-duration-300'>
+                        <Link href="https://www.linkedin.com/in/stephane-antoine-etudiant-iutlan/" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-duration-300'>
                             <FaLinkedin />
                         </Link>
                     </div>

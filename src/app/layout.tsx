@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Exo_2 } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +10,12 @@ import { ThemeProvider } from "./context/ThemeContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const exo2 = Exo_2({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // choose weights you need
+  variable: "--font-exo2",       // optional CSS variable
 });
 
 const geistMono = Geist_Mono({
@@ -28,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white transition-colors dark:bg-gray-900 dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${exo2.variable} antialiased bg-white transition-colors dark:bg-gray-900 dark:text-white`}
       >
 
         <ThemeProvider>

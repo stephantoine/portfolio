@@ -4,7 +4,6 @@ import { MoonIcon } from '@heroicons/react/24/outline';
 import { SunIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/16/solid';
 import { Bars3Icon } from '@heroicons/react/16/solid';
-import { div } from 'framer-motion/client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
@@ -21,9 +20,9 @@ const Navbar = () => {
 
     const menuItems = [
         { label: 'Accueil', href: '/' },
-        { label: 'A propos', href: '/about' },
-        { label: 'Projets', href: '/projects' },
+        { label: 'À propos', href: '/about' },
         { label: 'Compétences', href: '/competences' },
+        { label: 'Projets', href: '/projects' },
         { label: 'Contact', href: '/contact' }
     ]
 

@@ -1,21 +1,49 @@
-"use client";
-import { projects } from "@/contents/project";
-import Image from "next/image";
-import Link from "next/link";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import React from 'react'
+import { skills } from '@/contents/comp'
+import { projects } from '@/contents/project'
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
-const Projects = () => {
-    return (
-        <div className="container max-w-7xl mx-auto pt-10 pb-20">
-            <h1 className="text-4xl font-bold mb-4 text-center">Projets réalisés</h1>
-            <p className="text-lg text-secondary mb-24 text-center">Voici l&apos;ensemble de mes projets informatiques</p>
+const num = 5; // indice de la compétence "Réaliser"
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            {
-                projects.map((project) => (
-                    <article 
+const Collaborer = () => {
+  const skill = skills[num];
+
+  // On récupère les projets liés à cette compétence
+  const relatedProjects = projects.filter((p) =>
+    skill.projects.includes(p.handle)
+  );
+
+  return (
+    <div className="container max-w-7xl mx-auto pt-10 pb-20 space-y-6">
+      <div className= "text-2xl font-bold">
+        {skill.number} – {skill.name} : {skill.description}
+      </div>
+
+      <div className='text-gray-800 dark:text-gray-400 space-y-6'>
+        <p>{skill.details[0]}</p>
+
+        <div className='space-y-2'>
+          <p>{skill.details[1]}</p>
+
+          <ul className='list-disc list-inside'>
+            {skill.details.slice(2, 5).map((detail, index) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
+        </div>
+
+        <p>{skill.details[5]}</p>
+      </div>
+
+      <div>
+          <h2 className='text-xl font-bold'>Quelques projets</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                {relatedProjects.map((project) => (
+                  <article 
                     key={project.title}
-                    className='bg-white dark:bg-dark/50 rounded-lg shadow-md p-6 '>
+                    className='bg-white dark:bg-dark/50 rounded-lg shadow-md p-6 ' style={{ border: `2px solid ${skill.color}` }}>
                         <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
                             <Image
                             src={project.image}
@@ -26,7 +54,7 @@ const Projects = () => {
                             />
                         </div>
 
-                        <h3 className='text-xl font-semibold mb-2 transition-colors'>{project.title}</h3>
+                        <h3 className='text-xl font-semibold mb-2'>{project.title}</h3>
                         <p className='text-gray-800 dark:text-gray-300 mb-2'>{project.type}</p>
                         <p className='text-gray-600 dark:text-gray-400 mb-4'>{project.description}</p>
                         
@@ -57,10 +85,11 @@ const Projects = () => {
                         </div>
 
                     </article>
-                ))
-            }</div>
-        </div>
-    )
+                ))}
+          </div>
+      </div>
+    </div>
+  )
 }
 
-export default Projects;
+export default Collaborer
