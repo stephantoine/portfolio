@@ -49,7 +49,7 @@ const Hero = () => {
                 </Link>
 
                 <Link
-                  href="https://www.linkedin.com/in/stephane-antoine-etudiant-iutlan/overlay/1760433484821/single-media-viewer/?profileId=ACoAAEy_M_gBghXZwrPgkyA7gZ1LQKUpdjBw-cE"
+                  href="https://www.linkedin.com/in/stephane-antoine-etudiant-iutlan/details/featured/1762985693642/single-media-viewer/?profileId=ACoAAEy_M_gBghXZwrPgkyA7gZ1LQKUpdjBw-cE"
                   className="flex items-center gap-1 text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
                 >
                   <svg
